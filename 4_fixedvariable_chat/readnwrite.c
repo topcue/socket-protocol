@@ -1,15 +1,12 @@
 //#include "readnwrite.h"
 
-void err(char* msg)
-{
+void err(char* msg) {
 	fputs(msg, stderr);
 	fputc('\n', stderr);
 	exit(1);
 }
 
-ssize_t
-readn(int fd, void* vptr, size_t n)
-{
+ssize_t readn(int fd, void* vptr, size_t n) {
 	ssize_t nleft;
 	ssize_t nread;
 	char* ptr;
@@ -20,22 +17,17 @@ readn(int fd, void* vptr, size_t n)
 	while(nleft > 0) {
 		nread = read(fd, ptr, nleft);
 
-		if(nread == -1) {
+		if(nread == -1)
 			return -1;
-		}
-		else if(nread == 0) {
-			// read all!
-			break;
-		}
+		else if(nread == 0)
+			break; // read all!
 		nleft -= nread;
 		ptr += nread;
 	}
 	return (n-nleft);
 }
 
-ssize_t
-writen(int fd, const void* vptr, size_t n)
-{
+ssize_t writen(int fd, const void* vptr, size_t n) {
 	ssize_t nleft;
 	ssize_t nwritten;
 	const char* ptr;
@@ -45,9 +37,8 @@ writen(int fd, const void* vptr, size_t n)
 
 	while(nleft > 0) {
 		nwritten = write(fd, ptr, nleft);
-		if(nwritten == -1) {
+		if(nwritten == -1)
 			return -1;
-		}
 		nleft -= nwritten;
 		ptr += nwritten;
 	}
@@ -55,4 +46,3 @@ writen(int fd, const void* vptr, size_t n)
 }
 
 // EOF
-
