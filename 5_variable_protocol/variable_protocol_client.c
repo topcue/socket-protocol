@@ -8,10 +8,9 @@
 #include "readnwrite.c"
 
 // different from server
-#define BUF_SIZE	32
+#define BUF_SIZE 32
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
 	int clnt_sock;
 	struct sockaddr_in clnt_addr;
 
@@ -66,5 +65,3 @@ int main(int argc, char* argv[])
 }
 
 // EOF
-
-
