@@ -9,10 +9,9 @@
 
 #include "readnwrite.c"
 
-#define BUF_SIZE	128
+#define BUF_SIZE 128
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
 	int serv_sock;
 	int clnt_sock;
 	struct sockaddr_in serv_addr;
@@ -97,5 +96,3 @@ int main(int argc, char* argv[])
 }
 
 // EOF
-
-
