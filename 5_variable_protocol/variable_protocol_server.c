@@ -10,10 +10,9 @@
 #include "readnwrite.c"
 
 // different from client
-#define BUF_SIZE	128
+#define BUF_SIZE 128
 
-int  _recv_ahead(int sock, char* p)
-{
+int  _recv_ahead(int sock, char* p) {
 	// static -> DATA SECTION
 	static int nbytes = 0;
 	static char buf[1024] = {0x00, };
@@ -36,8 +35,7 @@ int  _recv_ahead(int sock, char* p)
 	return 1;
 }
 
-int readline(int sock, char* buf, int maxlen)
-{
+int readline(int sock, char* buf, int maxlen) {
 	int n, nbytes;
 	char c;
 	char* ptr = buf;
@@ -66,8 +64,7 @@ int readline(int sock, char* buf, int maxlen)
 }
 
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
 	int serv_sock;
 	int clnt_sock;
 	struct sockaddr_in serv_addr;
@@ -141,5 +138,3 @@ int main(int argc, char* argv[])
 }
 
 // EOF
-
-
