@@ -15,6 +15,6 @@
 
 ## Getting Started
 
-### Depencies
+### Dependencies
 
 - Ubuntu
